@@ -29,3 +29,14 @@ Route::get('/suma/{num1}/{num2}', 'WebController@suma');
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+
+Route::get('/books', 'BookController@index');
+
+Route::get('/categories', 'CategoryController@index');
+
+
+
+
+
+
