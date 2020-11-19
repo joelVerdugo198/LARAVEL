@@ -38,9 +38,10 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         if ($category = Category::create($request->all())) {
-            return redirect()->back();
+
+            return redirect()->back()->with('success','El registro se creo correctamente');
         }
-        return redirect()->back();
+        return redirect()->back()->with('error','No se pudo crear el registro');
     }
 
     /**
