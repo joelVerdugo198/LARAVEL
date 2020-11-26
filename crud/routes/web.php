@@ -37,7 +37,7 @@ Route::group(['middleware' => ['auth']],function(){
 	Route::post('/books', 'BookController@store');
 
 	// CATEGORIES
-	Route::get('/categories', 'CategoryController@index');
+	Route::get('/categories', 'CategoryController@index')->name('categories')->middleware('permission:crud categories');
 
 	Route::post('/categories', 'CategoryController@store');
 
